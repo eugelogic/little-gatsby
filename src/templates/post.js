@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 export const query = graphql`
 query ($slug: String!) {
@@ -29,8 +28,7 @@ export default ({
         },
     },
 }) => (
-        <>
-            <Header />
+        <Layout>
             {tags && tags.length ? (
             <ul>
             {tags.map(tag => (
@@ -41,6 +39,5 @@ export default ({
             <h1>{title}</h1>
             <time>{date}</time>
             <MDXRenderer>{content}</MDXRenderer>
-            <Footer />
-        </>
+        </Layout >
 )
