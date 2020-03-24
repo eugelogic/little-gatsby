@@ -5,7 +5,10 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 export const query = graphql`
 query ($slug: String!) {
     mdx(frontmatter: {slug: {eq: $slug}}) {
-        frontmatter { title }
+        frontmatter {
+            title,
+            date(formatString: "dddd DD MMMM YYYY")
+        }
         body
     }
 }
@@ -14,13 +17,17 @@ query ($slug: String!) {
 export default ({
     data: {
         mdx: {
-            frontmatter: { title },
+            frontmatter: {
+                title,
+                date
+            },
             body: content,
         },
     },
 }) => (
         <>
             <h1>{title}</h1>
+            <time>{date}</time>
             <MDXRenderer>{content}</MDXRenderer>
         </>
 )
