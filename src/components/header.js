@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import useSiteMetadata from '../hooks/use-site-metadata'
 
-export const Header = () => {
+const Header = () => {
     const { title, description } = useSiteMetadata()
     return (
         <header>

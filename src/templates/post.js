@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 export const query = graphql`
 query ($slug: String!) {
@@ -40,5 +41,6 @@ export default ({
             <h1>{title}</h1>
             <time>{date}</time>
             <MDXRenderer>{content}</MDXRenderer>
+            <Footer />
         </>
 )
