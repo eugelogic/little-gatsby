@@ -30,7 +30,7 @@ export default ({
 }) => (
         <Layout>
             {tags && tags.length ? (
-            <ul>
+            <ul className="tags-list">
             {tags.map(tag => (
                 <li key={tag}>{tag}</li>
             ))}

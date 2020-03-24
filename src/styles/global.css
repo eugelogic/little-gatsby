@@ -1,5 +1,60 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: #222222;
+}
+
 .container {
     max-width: 630px;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 75px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+header a {
+    color: #222222;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 5px 0;
+}
+
+
+.tags-list {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tags-list li {
+    margin-right: 20px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #222222;
+}
+
+footer a:hover,
+footer a:active {
+    text-decoration: none;
 }
