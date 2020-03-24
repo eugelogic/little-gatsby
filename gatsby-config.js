@@ -5,6 +5,17 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Little Gatsby`,
+    description: `Blog like if nobody was reading.`,
+    siteUrl: `https://little-gatsby.netlify.com/`,
+    author: {
+      name: `Eugene Molari`,
+      bio: `Spreading some #JAMstack :-)`,
+      github: `https://github.com/eugelogic`,
+      twitter: `https://twitter.com/EugeneMolari`
+    }
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
