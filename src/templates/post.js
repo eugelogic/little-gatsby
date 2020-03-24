@@ -8,6 +8,7 @@ query ($slug: String!) {
         frontmatter {
             title,
             date(formatString: "dddd DD MMMM YYYY")
+            tags
         }
         body
     }
@@ -19,13 +20,21 @@ export default ({
         mdx: {
             frontmatter: {
                 title,
-                date
+                date,
+                tags
             },
             body: content,
         },
     },
 }) => (
         <>
+            {tags && tags.length ? (
+            <ul>
+            {tags.map(tag => (
+                <li key={tag}>{tag}</li>
+            ))}
+            </ul>
+            ) : null}
             <h1>{title}</h1>
             <time>{date}</time>
             <MDXRenderer>{content}</MDXRenderer>
