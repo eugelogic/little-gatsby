@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Header from '../components/header'
 
 export const query = graphql`
 query ($slug: String!) {
@@ -28,6 +29,7 @@ export default ({
     },
 }) => (
         <>
+            <Header />
             {tags && tags.length ? (
             <ul>
             {tags.map(tag => (
