@@ -16,28 +16,34 @@ query ($slug: String!) {
 }
 `
 
-export default ({
-    data: {
-        mdx: {
-            frontmatter: {
-                title,
-                date,
-                tags
-            },
-            body: content,
-        },
-    },
-}) => (
-        <Layout>
-            {tags && tags.length ? (
-            <ul className="tags-list">
-            {tags.map(tag => (
-                <li key={tag}>{tag}</li>
-            ))}
-            </ul>
-            ) : null}
-            <h1>{title}</h1>
-            <time>{date}</time>
-            <MDXRenderer>{content}</MDXRenderer>
-        </Layout >
-)
+const Post = props => {
+    const {
+        data: {
+            mdx: {
+                frontmatter: {
+                    title,
+                    date,
+                    tags
+                },
+                body: content,
+            }
+        }
+    } = props
+
+return (
+    <Layout>
+        {tags && tags.length ? (
+        <ul className="tags-list">
+        {tags.map(tag => (
+            <li>{tag}</li>
+        ))}
+        </ul>
+        ) : null}
+        <h1>{title}</h1>
+        <time>{date}</time>
+        <MDXRenderer>{content}</MDXRenderer>
+    </Layout >
+    )
+}
+
+export default Post
